@@ -1,0 +1,7 @@
+{
+  "name": "MISApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
