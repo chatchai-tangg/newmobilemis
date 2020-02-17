@@ -34,7 +34,7 @@ export class StdenddistfacPage implements OnInit {
         this.list = res;
         this.total = res.map(res => res.total);
         this.facname = res.map(res => res.facultyname);
-        console.log(this.list);
+        // console.log(this.list);
         this.chartstdenddistfac();
 
       });
@@ -51,11 +51,19 @@ export class StdenddistfacPage implements OnInit {
       data: {
         labels: this.facname,
         datasets: [{
-          label: 'นักศึกษาจบการศึกษาแบ่งตามคณะ',
+          label: 'นักศึกษาจบการศึกษาปีการศึกษา 2558 - 2562',
           data: this.total,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(255, 102, 102, 0.5)',
+            'rgba(0, 255, 128, 0.5)',
+            'rgba(51, 153, 255, 0.5)',
+            'rgba(127, 0, 255, 0.5)',
+            'rgba(255, 255, 0, 0.5)',
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(255, 128, 0, 0.5)',
+            'rgba(102, 255, 255, 0.5)',
+            'rgba(255, 0, 127, 0.5)',
           ],
           borderColor: [
             'rgba(255,99,132,1)',

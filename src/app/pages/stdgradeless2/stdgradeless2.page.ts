@@ -34,8 +34,7 @@ export class Stdgradeless2Page implements OnInit {
       .subscribe((res: any) => {
         this.list = res.Table;
         this.total = res.Table.map(res => res.TOTAL);
-        this.amcdyear = res.Table.map(res => res.ADMITACADYEAR);
-        console.log(this.list);
+        this.amcdyear = res.Table.map(res => res.ADMITACADYEAR);        
         this.chartstdgrade();
 
       });

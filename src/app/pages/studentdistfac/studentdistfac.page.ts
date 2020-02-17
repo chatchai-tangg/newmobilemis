@@ -191,9 +191,13 @@ export class StudentdistfacPage implements OnInit {
       },
       options: {
         scales: {
-          xAxes: [
-          ]
-        },
+          yAxes: [{
+            ticks: {
+                // max: 5,
+                min: 500,
+                stepSize: 100
+            }
+        }]},
         legend: {
           position: 'bottom',
           display: true,
@@ -430,7 +434,7 @@ export class StudentdistfacPage implements OnInit {
       data: {
         labels: this.yeardept08,
         datasets: [{
-          label: "คณะวิศวกรรมศาสตร์",
+          label: "คณะอุตสาหกรรมสิ่งทอและออกแบบแฟชั่น",
           data: this.countdept08,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -466,7 +470,7 @@ export class StudentdistfacPage implements OnInit {
       data: {
         labels: this.yeardept09,
         datasets: [{
-          label: "คณะวิศวกรรมศาสตร์",
+          label: "คณะสถาปัตยกรรมศาสตร์และการออกแบบ",
           data: this.countdept09,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
