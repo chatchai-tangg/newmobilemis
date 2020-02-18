@@ -89,6 +89,13 @@ export class StudentPage implements OnInit {
             gridLines: {
               offsetGridLines: true
             }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 500,
+            }
           }]
         },
         legend: {
