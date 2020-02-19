@@ -3,7 +3,7 @@
     <ion-button slot="start" color="Dark-tint">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-button>
-    <ion-title>{{title}}</ion-title>
+    <ion-title>หน้าหลัก</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,26 +12,32 @@
   <!-- <ul>
     <li *ngFor="let item of DataArr">{{item.stafftype}} : {{item.total}}</li>
   </ul> -->
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Id</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of DataArr">
-        <td> {{item.stafftype}} : {{item.total}}</td>
-        <td style="display: flex">
+  <ion-grid>
+    <ion-col>
+      Id
+    </ion-col>
+    <ion-row *ngFor="let item of DataArr">    
+      <ion-col size-md="9" push-md="9">
+        <div>
+          {{item.stafftype}} : {{item.total}}
+        </div>
+      </ion-col>
+      <ion-col size-md="3" push-md="3">
+        <div>
           <ion-button color="warning" size="small" routerLink='/adddata/{{item.ID}}'>
             <ion-icon name="create"></ion-icon>
           </ion-button>
+        </div>
+      </ion-col>
+     
+      
+          
           <!-- <ion-button color="danger" size="small" (click)="delete(item)">
             <ion-icon name="trash"></ion-icon>
           </ion-button> -->
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+       
+    
+</ion-row>
+</ion-grid>
 
 </ion-content>

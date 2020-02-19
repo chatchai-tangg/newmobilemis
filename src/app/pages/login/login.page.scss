@@ -1,0 +1,27 @@
+ion-content {
+  --background: url('../../../assets/image/bg01.jpeg') no-repeat  center fixed;
+}
+
+.bglogin{
+  background-color: white;
+}
+
+.center{
+  align-items: center
+}
+
+
+
+// :host {
+//   ion-content {
+//     --background: url('/src/assets/image/bg01.jpeg') no-repeat 100% 100%;
+//   }
+// }
+
+
+// ion-content{
+//   --background: red;
+//   --background-repeat: no-repeat;
+//   --background-size: cover;  
+// }
+

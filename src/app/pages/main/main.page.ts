@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  title = 'app';
+  title = 'หน้าหลัก';
   mList: any[] = [];
   DataArr: any[] = [];
 

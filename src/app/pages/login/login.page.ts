@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
     // alert('username: ' + this.loguser.value);
     // alert('password: ' + this.logpassword.value);
 
-    if (user === 'admin' && pass === '1234' || user === 'test' && pass === '1111') {
+    if (user === 'admin' && pass === '1234' || user === 'user' && pass === '1234') {
       // alert('success');
       this.router.navigate(['menu/main']);
     } else {
