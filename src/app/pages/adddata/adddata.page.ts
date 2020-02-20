@@ -26,21 +26,19 @@ export class AdddataPage implements OnInit {
 
   ) {
 
-
-
   }
 
   ngOnInit() {
-    // this.id = this.activatedRoute.snapshot.params["ID"];
+    this.id = this.activatedRoute.snapshot.params["ID"];
     // this.modelng.ID = id;
     console.log(this.id);
     // get item details using id
-    // this.http.get<any>('http://203.158.144.140/APIchart/dataupdate/show/' + this.id).subscribe(result => {
-    //   console.log(result);
-    //   this.dData = result;
-    //   this.modelng = result.staffall;
-    //   console.log(JSON.stringify(this.dData));
-    // });
+    this.http.get<any>('http://203.158.144.140/APIchart/dataupdate/show/' + this.id).subscribe(result => {
+      console.log(result);
+      this.dData = result;
+      this.modelng = result.staffall;
+      console.log(JSON.stringify(this.dData));
+    });
 
   }
 
