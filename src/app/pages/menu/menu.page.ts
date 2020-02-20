@@ -10,7 +10,7 @@ export class MenuPage implements OnInit {
   page = [
     {
       title: 'หน้าหลัก',
-      url: '/menu/main',
+      url: '/menu/mainpage',
       icon: 'home'
     },
     {

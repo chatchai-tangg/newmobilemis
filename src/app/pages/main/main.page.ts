@@ -15,10 +15,10 @@ export class MainPage implements OnInit {
   constructor(private service: CrudapiService,
     private http: HttpClient) {
     this.title = service.getstr();
-    http.get<any[]>('http://203.158.144.140/APIchart/charts/Empall').subscribe(result => {
+    http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/Empall').subscribe(result => {
       this.DataArr = result;
 
-      console.log(JSON.stringify(this.DataArr));
+      // console.log(JSON.stringify(this.DataArr));
     });
 
   }

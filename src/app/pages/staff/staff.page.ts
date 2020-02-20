@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
 import 'chartjs-plugin-labels';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
@@ -20,7 +19,7 @@ export class StaffPage implements OnInit {
 
 
   constructor(public http: HttpClient) { }
-  
+
   get_data() {
     this.http.get('https://app.rmutp.ac.th/testapibi/charts/empall')
       .subscribe((res: any) => {
@@ -71,7 +70,6 @@ export class StaffPage implements OnInit {
           borderWidth: 1
         }]
       },
-      // plugins: [ChartDataLabels],
       options: {
         responsive: true,
         plugins: {
@@ -96,24 +94,6 @@ export class StaffPage implements OnInit {
             padding: 20
           }
         },
-        // layout: {
-        //   padding: {
-        //     left: 20,
-        //     right: 20,
-        //     top: 20,
-        //     bottom: 0
-        //   }
-        // }
-
-        // responsive: true,              
-        // legend: {
-        //   display: true,
-        //   position: 'bottom',        
-        //   labels:{
-        //     padding: 13,
-        //     boxWidth: 20,         
-        //   }
-        // }       
       },
     });
   }

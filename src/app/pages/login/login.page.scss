@@ -1,12 +1,16 @@
 ion-content {
-  --background: url('../../../assets/image/bg01.jpeg') no-repeat  center fixed;
+  --background: url('../../../assets/image/bg01.jpeg') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.bglogin{
+.bglogin {
   background-color: white;
 }
 
-.center{
+.center {
   align-items: center
 }
 
@@ -24,4 +28,3 @@ ion-content {
 //   --background-repeat: no-repeat;
 //   --background-size: cover;  
 // }
-
