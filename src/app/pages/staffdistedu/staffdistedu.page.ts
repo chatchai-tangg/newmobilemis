@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import 'chartjs-plugin-labels';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({

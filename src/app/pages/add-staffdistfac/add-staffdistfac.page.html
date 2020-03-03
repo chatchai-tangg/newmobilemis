@@ -8,16 +8,11 @@
 </ion-header>
 
 <ion-content>
-
   <!-- <p>{{ modelng | json }}</p> -->
-  <div *ngIf="modelng">
-    <!-- <ion-item>
-      <ion-label>Name</ion-label>
-      <ion-input [(ngModel)]="modelng.ID" placeholder="Enter Name"></ion-input>
-    </ion-item> -->
+  <div *ngIf="modelng">       
     <ion-item>
       <ion-label position="floating">ประเภทบุคลากร :</ion-label>
-      <ion-input [(ngModel)]="modelng.stafftype" placeholder="Enter Type" type="text"></ion-input>
+      <ion-input [(ngModel)]="modelng.education_level" placeholder="Enter Type" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">จำนวน :</ion-label>
@@ -25,11 +20,8 @@
     </ion-item>
   </div>
 
-  <ion-button (click)="test()" color="success" shape="block" expand="block" style="margin-top: 30px;">
+  <ion-button (click)="update()" color="success" shape="block" expand="block" style="margin-top: 30px;">
     Update
-  </ion-button>
-  <!-- <ion-button [routerLink]="[ '/menu']" color="danger" size="small">
-    Cancel
-  </ion-button> -->
+  </ion-button> 
 
 </ion-content>

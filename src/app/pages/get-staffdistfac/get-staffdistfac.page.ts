@@ -4,43 +4,35 @@ import { CrudapiService } from '../services/crudapi.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.page.html',
-  styleUrls: ['./main.page.scss'],
+  selector: 'app-get-staffdistfac',
+  templateUrl: './get-staffdistfac.page.html',
+  styleUrls: ['./get-staffdistfac.page.scss'],
 })
-export class MainPage implements OnInit {
-  title = 'หน้าหลัก';
+export class GetStaffdistfacPage implements OnInit {
   mList: any[] = [];
   DataArr: any[] = [];
   id: any;
 
-  constructor(private service: CrudapiService,
+  constructor(
     private http: HttpClient,
     public activatedRoute: ActivatedRoute,
     public router: Router,
-    public apiService: CrudapiService, ) {
-      
-    this.title = service.getstr();
-    http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/empall').subscribe(result => {
+    public apiService: CrudapiService
+  ) {
+    
+    http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/Empdistedu').subscribe(result => {
       this.DataArr = result;
       // console.log(JSON.stringify(this.DataArr));
     });
-
-  }
-
+    
+   }   
 
   ngOnInit() {
 
     this.id = this.activatedRoute.snapshot.params["ID"];
     
-    console.log(this.id);
+    // console.log(this.id);
 
   }
-
-  // onClickLoad() {
-  //   this.service.DataArr().then(result => {
-  //     this.mList = result;
-  //   })
-  // }
 
 }
