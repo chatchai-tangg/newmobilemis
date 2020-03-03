@@ -33,7 +33,7 @@ export class MainpagePage implements OnInit {
   }
   get_staffleave() {
 
-    this.http.get('http://app.rmutp.ac.th/testapibi/charts/Employee_leave')
+    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Employee_leave')
       .subscribe((res: any) => {
         this.list = res;
         this.stafftotals = res.map(ss => ss.sums);

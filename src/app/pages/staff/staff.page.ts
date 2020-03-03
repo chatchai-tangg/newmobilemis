@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import 'chartjs-plugin-labels';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Statement } from '@angular/compiler';
 
 @Component({
   selector: 'app-staff',
@@ -33,6 +34,7 @@ export class StaffPage implements OnInit {
   ngOnInit() {
     this.get_data();
   }
+
 
   barChartMethod() {
     // Chart.NewLegend = Chart.Legend.extend({

@@ -13,9 +13,6 @@
     <li *ngFor="let item of DataArr">{{item.stafftype}} : {{item.total}}</li>
   </ul> -->
   <ion-grid>
-    <ion-col>
-      Id
-    </ion-col>
     <ion-row *ngFor="let item of DataArr">
       <ion-col size-md="9" push-md="9">
         <div>
@@ -32,7 +29,6 @@
       <!-- <ion-button color="danger" size="small" (click)="delete(item)">
             <ion-icon name="trash"></ion-icon>
           </ion-button> -->
-
 
     </ion-row>
   </ion-grid>

@@ -14,7 +14,7 @@ import { CrudapiService } from '../services/crudapi.service';
 export class AdddataPage implements OnInit {
 
   dData: any[] = [];
-  id: number;
+  id: any;
   modelng: StaffAll;
 
 
@@ -37,8 +37,21 @@ export class AdddataPage implements OnInit {
       console.log(result);
       this.dData = result;
       this.modelng = result.staffall;
-      console.log(JSON.stringify(this.dData));
+
+      // console.log(JSON.stringify(this.dData));
     });
+    // this.test();
+  }
+
+  test() {
+    const data = { "ID": 3, "stafftype": "พนักงานมหาวิทยาลัย ตำแหน่งประเภทผู้บริหาร", "total": "200" };
+    const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
+    const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Update';
+    return this.http.post<any>(authUrl, data, config)
+      .subscribe(res => {
+        console.log(res);
+      }
+      );
 
   }
 
