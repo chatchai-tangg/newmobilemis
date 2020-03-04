@@ -21,7 +21,13 @@ const routes: Routes = [
   { path: 'get-std', loadChildren: './pages/get-std/get-std.module#GetStdPageModule' },
   { path: 'add-std', loadChildren: './pages/add-std/add-std.module#AddStdPageModule' },
   { path: 'add-staffdistfac/:ID', loadChildren: './pages/add-staffdistfac/add-staffdistfac.module#AddStaffdistfacPageModule' },
-  { path: 'get-staffdistfac', loadChildren: './pages/get-staffdistfac/get-staffdistfac.module#GetStaffdistfacPageModule' },
+  { path: 'get-staffdistfac', loadChildren: './pages/get-staffdistfac/get-staffdistfac.module#GetStaffdistfacPageModule' },  { path: 'get-staffreq', loadChildren: './pages/get-staffreq/get-staffreq.module#GetStaffreqPageModule' },
+  { path: 'add-staffreq', loadChildren: './pages/add-staffreq/add-staffreq.module#AddStaffreqPageModule' },
+  { path: 'get-staffscholar', loadChildren: './pages/get-staffscholar/get-staffscholar.module#GetStaffscholarPageModule' },
+  { path: 'add-staffscholar', loadChildren: './pages/add-staffscholar/add-staffscholar.module#AddStaffscholarPageModule' },
+  { path: 'get-stafftrain', loadChildren: './pages/get-stafftrain/get-stafftrain.module#GetStafftrainPageModule' },
+  { path: 'add-stafftrain', loadChildren: './pages/add-stafftrain/add-stafftrain.module#AddStafftrainPageModule' },
+
 
 
 

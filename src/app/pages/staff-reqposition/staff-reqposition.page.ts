@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
+import 'chartjs-plugin-labels';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
@@ -35,7 +36,7 @@ export class StaffReqpositionPage implements OnInit {
       .subscribe((res: any) => {
         this.list = res;
         this.etname = res.map(res => res.stafftype);
-        this.countreq = res.map(res => res.total);        
+        this.countreq = res.map(res => res.total);
         this.Chartreqposition();
       });
   }
