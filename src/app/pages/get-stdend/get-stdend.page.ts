@@ -4,11 +4,11 @@ import { CrudapiService } from '../services/crudapi.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
-  selector: 'app-get-std',
-  templateUrl: './get-std.page.html',
-  styleUrls: ['./get-std.page.scss'],
+  selector: 'app-get-stdend',
+  templateUrl: './get-stdend.page.html',
+  styleUrls: ['./get-stdend.page.scss'],
 })
-export class GetStdPage implements OnInit {
+export class GetStdendPage implements OnInit {
 
   mList: any[] = [];
   DataArr: any[] = [];
@@ -21,7 +21,7 @@ export class GetStdPage implements OnInit {
     public apiService: CrudapiService
   ) { 
 
-    http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/Stdall')
+    http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/Std_enddistfac')
     .subscribe((result: any) => {
       this.DataArr = result
       

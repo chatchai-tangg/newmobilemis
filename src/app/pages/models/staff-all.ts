@@ -7,4 +7,7 @@ export class StaffAll {
     total: string;
     grouptype: string;
 
+    acadyear:string;
+    admitacadyear:string;
+
 }
