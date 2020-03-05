@@ -32,7 +32,7 @@ export class AddStaffdistfacPage implements OnInit {
       // this.dData = result;
       this.modelng = result.StaffDis;
       console.log(this.modelng);
-  });
+    });
 
   }
 

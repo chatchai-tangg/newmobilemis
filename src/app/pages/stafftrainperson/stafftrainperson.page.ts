@@ -14,6 +14,7 @@ export class StafftrainpersonPage implements OnInit {
   list: any;
   chartstaff: any;
 
+
   constructor(public http: HttpClient, public router: Router) { }
 
   // get_stafftrain() {   
@@ -27,47 +28,47 @@ export class StafftrainpersonPage implements OnInit {
   //     });
   // }
 
+
   get_stafftrainbydivi() {
-    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Emptrainstaffbydivi')
+    this.http.get('https://app.rmutp.ac.th/testapibi/charts/stafftrain')
       .subscribe((res: any) => {
         this.list = res;
-        this.depth = res.map(res => res.facultyname);
-        this.total = res.map(res => res.total);        
+        this.depth = res.stfdivision.map(res => res.facultyname);
+        this.total = res.stfdivision.map(res => res.total);
         this.chartstfftrain();
 
       });
   }
 
   get_stafftrainbyfac() {
-    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Emptrainstaffbyfac')
+    this.http.get('https://app.rmutp.ac.th/testapibi/charts/stafftrain')
       .subscribe((res: any) => {
         this.list = res;
-        this.depth = res.map(res => res.facultyname);
-        this.total = res.map(res => res.total);       
+        this.depth = res.stffac.map(res => res.facultyname);
+        this.total = res.stffac.map(res => res.total);
         this.chartstfftrainbyfac();
 
       });
   }
 
   get_stafftrainbycenter() {
-    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Emptrainstaffbycenter')
+    this.http.get('https://app.rmutp.ac.th/testapibi/charts/stafftrain')
       .subscribe((res: any) => {
         this.list = res;
-        this.depth = res.map(res => res.facultyname);
-        this.total = res.map(res => res.total);        
+        this.depth = res.stfcenter.map(res => res.facultyname);
+        this.total = res.stfcenter.map(res => res.total);
         this.chartstfftrainbycenter();
-
       });
   }
 
 
   get_stafftrainbyinst() {
-    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Emptrainstaffbyinst')
+    this.http.get('https://app.rmutp.ac.th/testapibi/charts/stafftrain')
       .subscribe((res: any) => {
         this.list = res;
-        this.depth = res.map(res => res.facultyname);
-        this.total = res.map(res => res.total);
-        
+        this.depth = res.stfinst.map(res => res.facultyname);
+        this.total = res.stfinst.map(res => res.total);
+
         this.chartstfftrainbyinst();
 
       });
@@ -75,6 +76,7 @@ export class StafftrainpersonPage implements OnInit {
 
 
   ngOnInit() {
+
     this.get_stafftrainbydivi();
     this.get_stafftrainbyfac();
     this.get_stafftrainbycenter();

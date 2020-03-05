@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>AddStafftrain</ion-title>
+  <ion-toolbar color="dark">
+    <ion-button slot="start" color="Dark-tint">
+      <ion-back-button defaultHref="/get-stafftrain/"></ion-back-button>
+    </ion-button>
+    <ion-title>แก้ไขข้อมูล</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div *ngIf="modelng">
+    <ion-item>
+      <ion-label position="floating">หน่วยงาน :</ion-label>
+      <ion-input [(ngModel)]="modelng.facultyname" placeholder="Enter Type" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">จำนวน :</ion-label>
+      <ion-input [(ngModel)]="modelng.total" placeholder="Enter Count"></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-button (click)="update()" color="success" shape="block" expand="block" style="margin-top: 30px;">
+    Update
+  </ion-button>
 
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import 'chartjs-plugin-labels';
 import { HttpClient, } from '@angular/common/http';
 
 @Component({
@@ -42,28 +43,29 @@ export class StaffscholarPage implements OnInit {
     this.http.get('https://app.rmutp.ac.th/testapibi/charts/Empscholar')
       .subscribe((res: any) => {
         this.list = res;
-        // this.dataposition = res.map(res => res.scholartype);
-        // this.datanameposition = res.map(res => res.total);
-        console.log(res);
-        this.get_reqscholar();
+        this.dataposition = res.map(res => res.scholartype);
+        this.datanameposition = res.map(res => res.total);
+        console.log(this.dataposition);
+        console.log(this.datanameposition);
+        this.Chartscholar();
       });
   }
 
   ngOnInit() {
-    this.Chartscholar();
+    this.get_reqscholar();
   }
 
   Chartscholar() {
     var ctxscholar = (<any>document.getElementById('Chartscholar')).getContext('2d');
     this.chart = new Chart(ctxscholar, {
       // The type of chart we want to create
-      type: 'horizontalBar',
+      type: 'doughnut',
       // The data for our dataset
       data: {
-        labels: ['ศึกษาต่อภายในประเทศ (ภาคปกติ)', 'ศึกษาต่อภายในประเทศ (ภาคนอกเวลา)'],
+        labels: this.dataposition,
         datasets: [{
           label: 'ผู้ขอทุนการศึกษา',
-          data: [257, 24],
+          data: this.datanameposition,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
