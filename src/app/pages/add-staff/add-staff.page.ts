@@ -33,7 +33,7 @@ export class AddStaffPage implements OnInit {
       this.dData = result;
       this.modelng = result.staffall;
       console.log(this.modelng);
-  });
+    });
 
   }
 
@@ -43,8 +43,16 @@ export class AddStaffPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Update';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
-      }
+        // console.log(res.status);
+        if (res.status == 'ok') {
+          this.router.navigate(['/menu/staff']);
+        }
+        return res;
+      },
+        err => {
+          return err;
+
+        }
       );
   }
 

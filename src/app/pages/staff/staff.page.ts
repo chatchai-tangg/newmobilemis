@@ -21,6 +21,8 @@ export class StaffPage implements OnInit {
 
   constructor(public http: HttpClient) { }
 
+
+
   get_data() {
     this.http.get('https://app.rmutp.ac.th/testapibi/charts/empall')
       .subscribe((res: any) => {
@@ -32,17 +34,15 @@ export class StaffPage implements OnInit {
   }
 
   ngOnInit() {
+    // this.get_data();
+  }
+
+  ionViewDidEnter() {
+    console.log("ionViewDidEnter");
     this.get_data();
   }
 
-
   barChartMethod() {
-    // Chart.NewLegend = Chart.Legend.extend({
-    //   afterFit: function() {
-    //     this.height = this.height + 50;
-    //   },
-    // });
-
     var ctx = (<any>document.getElementById('canvas-chart')).getContext('2d');
     this.chart = new Chart(ctx, {
       // The type of chart we want to create
@@ -98,6 +98,14 @@ export class StaffPage implements OnInit {
         },
       },
     });
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
   }
 }
 

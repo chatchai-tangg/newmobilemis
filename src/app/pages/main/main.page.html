@@ -2,7 +2,7 @@
   <ion-toolbar color="dark">
     <ion-button slot="start" color="Dark-tint">
       <!-- <ion-menu-button color="light"></ion-menu-button> -->
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/menu/staff"></ion-back-button>
     </ion-button>
     <ion-title>ข้อมูล</ion-title>
   </ion-toolbar>
@@ -12,25 +12,25 @@
   <!-- <button (click)="onClickLoad()">Load</button> -->
   <!-- <ul>
     <li *ngFor="let item of DataArr">{{item.stafftype}} : {{item.total}}</li>
-  </ul> -->  
-    
-      <ion-row *ngFor="let item of DataArr" class="ion-padding"> 
-        <ion-col size="10">
-          <div class="ion-text-wrap">
-            {{item.stafftype}} : {{item.total}}
-          </div>
-        </ion-col>
-        <ion-col>
-          <ion-button color="warning" size="small" routerLink='/add-staff/{{item.ID}}'>
-            <ion-icon name="create"></ion-icon>
-          </ion-button>
-        </ion-col>        
-      </ion-row>
-      <!-- <ion-button color="danger" size="small" (click)="delete(item)">
-            <ion-icon name="trash"></ion-icon>
-          </ion-button> -->        
+  </ul> -->
 
-    
-  
+  <ion-row *ngFor="let item of DataArr" class="ion-padding">
+    <ion-col size="10">
+      <div class="ion-text-wrap">
+        {{item.stafftype}} : {{item.total}}
+      </div>
+    </ion-col>
+    <ion-col>
+      <ion-button color="warning" size="small" routerLink='/add-staff/{{item.ID}}'>
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-button color="danger" size="small" (click)="delete(item)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button> -->
+
+
+
 
 </ion-content>
