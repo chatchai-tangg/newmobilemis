@@ -30,11 +30,11 @@ export class Stdgradeless2Page implements OnInit {
   // }
 
   get_stdgradeless2() {
-    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Stdgradeless2')
+    this.http.get('https://app.rmutp.ac.th/testapibi/charts/Std_gradeless2')
       .subscribe((res: any) => {
         this.list = res.Table;
-        this.total = res.Table.map(res => res.TOTAL);
-        this.amcdyear = res.Table.map(res => res.ADMITACADYEAR);        
+        this.total = res.map(res => res.total);
+        this.amcdyear = res.map(res => res.admitacadyear);        
         this.chartstdgrade();
 
       });

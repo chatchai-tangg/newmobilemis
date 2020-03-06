@@ -12,12 +12,11 @@
   <!-- <button (click)="onClickLoad()">Load</button> -->
   <!-- <ul>
     <li *ngFor="let item of DataArr">{{item.stafftype}} : {{item.total}}</li>
-  </ul> -->
-  
+  </ul> -->  
     
-      <ion-row *ngFor="let item of DataArr"> 
-        <ion-col size="9">
-          <div>
+      <ion-row *ngFor="let item of DataArr" class="ion-padding"> 
+        <ion-col size="10">
+          <div class="ion-text-wrap">
             {{item.stafftype}} : {{item.total}}
           </div>
         </ion-col>

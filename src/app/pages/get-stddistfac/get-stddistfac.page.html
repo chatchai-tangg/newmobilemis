@@ -1,21 +1,24 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-button slot="start" color="Dark-tint">
-      <ion-back-button defaultHref="/menu/student"></ion-back-button>
+      <ion-back-button defaultHref="/menu/studentdistfac"></ion-back-button>
     </ion-button>
     <ion-title>ข้อมูล</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-row *ngFor="let item of DataArr" class="ion-padding">
+  <ion-row *ngFor="let item of dept01" class="ion-padding">
     <ion-col size="10">
       <div class="ion-text-wrap">
-        ปีการศึกษา {{item.acadyear}} : {{item.total}} คน
+        {{item.facultyname}} : {{item.total}} คน
+      </div>
+      <div class="ion-text-wrap">
+        ปีการศึกษา {{item.admitacadyear}}
       </div>
     </ion-col>
     <ion-col>
-      <ion-button color="warning" size="small" routerLink='/add-std/{{item.ID}}'>
+      <ion-button color="warning" size="small" routerLink='/addstddistfac/{{item.ID}}'>
         <ion-icon name="create"></ion-icon>
       </ion-button>
     </ion-col>
