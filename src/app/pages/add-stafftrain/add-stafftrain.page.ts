@@ -42,8 +42,16 @@ export class AddStafftrainPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Updatestftrain';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
-      }
+        // console.log(res.status);
+        if (res.status == 'ok') {
+          this.router.navigate(['/menu/stafftrainperson']);
+        }
+        return res;
+      },
+        err => {
+          return err;
+
+        }
       );
   }
 

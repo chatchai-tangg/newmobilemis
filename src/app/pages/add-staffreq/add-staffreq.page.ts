@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { StaffAll } from '../models/staff-all';
 import { CrudapiService } from '../services/crudapi.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-staffreq',
@@ -19,6 +20,7 @@ export class AddStaffreqPage implements OnInit {
     public router: Router,
     public apiService: CrudapiService,
     public http: HttpClient,
+    public navController: NavController
   ) { }
 
   ngOnInit() {
@@ -42,7 +44,16 @@ export class AddStaffreqPage implements OnInit {
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
         console.log(res);
-      }
+        if (res.status == 'ok') {
+          // this.router.navigate(['/menu/staff-reqposition']);
+          this.navController.navigateBack(['/menu/staff-reqposition']);
+        }
+        // return res;
+      },
+        err => {
+          return err;
+
+        }
       );
   }
 

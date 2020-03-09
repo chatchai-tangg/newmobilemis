@@ -42,8 +42,16 @@ export class AddStaffdistfacPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Updatedistedu';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
-      }
+        // console.log(res.status);
+        if (res.status == 'ok') {
+          this.router.navigate(['/menu/staffdistedu']);
+        }
+        return res;
+      },
+        err => {
+          return err;
+
+        }
       );
   }
 

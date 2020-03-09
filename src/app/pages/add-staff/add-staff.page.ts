@@ -47,7 +47,7 @@ export class AddStaffPage implements OnInit {
         if (res.status == 'ok') {
           this.router.navigate(['/menu/staff']);
         }
-        return res;
+        // return res;
       },
         err => {
           return err;

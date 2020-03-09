@@ -55,6 +55,10 @@ export class StaffscholarPage implements OnInit {
     this.get_reqscholar();
   }
 
+  ionViewDidEnter() {
+    this.get_reqscholar();
+  }
+
   Chartscholar() {
     var ctxscholar = (<any>document.getElementById('Chartscholar')).getContext('2d');
     this.chart = new Chart(ctxscholar, {
@@ -73,16 +77,24 @@ export class StaffscholarPage implements OnInit {
           borderColor: [
             'rgba(255,99,132,1)',
             'rgba(54, 162, 235, 1)',
-
           ],
           borderWidth: 1
         }]
       },
       options: {
+        responsive: true,
+        legend: {
+          position: 'bottom',
+          labels: {
+            // fontSize: 11,
+            usePointStyle: true,
+            padding: 20
+          }
+        },
         plugins: {
           labels: {
             render: 'value',
-          }
+          },
         },
       }
     });

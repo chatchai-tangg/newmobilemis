@@ -50,7 +50,15 @@ export class AdddataPage implements OnInit {
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
         console.log(res);
-      }
+        if (res.status == 'ok') {
+          // this.router.navigate(['/menu/staff']);
+        }
+        return res;
+      },
+        err => {
+          return err;
+
+        }
       );
 
   }

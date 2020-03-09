@@ -44,6 +44,10 @@ export class StdenddistfacPage implements OnInit {
     this.get_stdfiedfac();
   }
 
+  ionViewDidEnter() {
+    this.get_stdfiedfac();
+  }
+
   chartstdenddistfac() {
     var ctx = (<any>document.getElementById('stdenddistfac')).getContext('2d');
     this.chartstd = new Chart(ctx, {
@@ -64,6 +68,7 @@ export class StdenddistfacPage implements OnInit {
             'rgba(255, 128, 0, 0.5)',
             'rgba(102, 255, 255, 0.5)',
             'rgba(255, 0, 127, 0.5)',
+            'rgba(81, 218, 181, 0.5)'
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -73,8 +78,27 @@ export class StdenddistfacPage implements OnInit {
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 10
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              // labelString: 'หน่วยงาน (คณะ)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',

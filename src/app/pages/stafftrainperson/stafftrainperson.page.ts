@@ -68,15 +68,19 @@ export class StafftrainpersonPage implements OnInit {
         this.list = res;
         this.depth = res.stfinst.map(res => res.facultyname);
         this.total = res.stfinst.map(res => res.total);
-
         this.chartstfftrainbyinst();
-
       });
   }
 
 
   ngOnInit() {
+    this.get_stafftrainbydivi();
+    this.get_stafftrainbyfac();
+    this.get_stafftrainbycenter();
+    this.get_stafftrainbyinst();
+  }
 
+  ionViewDidEnter() {
     this.get_stafftrainbydivi();
     this.get_stafftrainbyfac();
     this.get_stafftrainbycenter();
@@ -98,7 +102,9 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(180, 227, 46, 0.2)',
+            'rgba(88, 203, 240, 0.2)'
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -106,23 +112,37 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 159, 64, 1)',
+            'rgba(180, 227, 46, 1)',
+            'rgba(88, 203, 240, 1)'
           ],
           borderWidth: 1
         }]
       },
       options: {
-        plugins: {
-          labels: {
-            render: 'value',
-          }
-        },
         legend: {
           position: 'bottom',
-          display: true,
+          // display: true,
           labels: {
           }
-        }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'หน่วยงาน (กอง)'
+            }
+          }],
+        },
       }
     });
   }
@@ -142,7 +162,11 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(180, 227, 46, 0.2)',
+            'rgba(88, 203, 240, 0.2)',
+            'rgba(81, 218, 181, 0.2)',
+
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -150,23 +174,38 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 159, 64, 1)',
+            'rgba(180, 227, 46, 1)',
+            'rgba(88, 203, 240, 1)',
+            'rgba(81, 218, 181, 1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
-        plugins: {
-          labels: {
-            render: 'value',
-          }
-        },
         legend: {
           position: 'bottom',
           display: true,
           labels: {
           }
-        }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
+          yAxes: [{
+            // scaleLabel: {
+            //   display: true,
+            //   labelString: 'หน่วยงาน (คณะ)'
+            // }
+          }],
+        },
       }
     });
   }
@@ -186,7 +225,10 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(180, 227, 46, 0.2)',
+            'rgba(88, 203, 240, 0.2)',
+            'rgba(81, 218, 181, 0.2)',
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -194,23 +236,38 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 159, 64, 1)',
+            'rgba(180, 227, 46, 1)',
+            'rgba(88, 203, 240, 1)',
+            'rgba(81, 218, 181, 1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
-        plugins: {
-          labels: {
-            render: 'value',
-          }
-        },
         legend: {
           position: 'bottom',
           display: true,
           labels: {
           }
-        }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)',
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'หน่วยงาน (ศูนย์)'
+            }
+          }],
+        },
       }
     });
   }
@@ -230,7 +287,10 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(180, 227, 46, 0.2)',
+            'rgba(88, 203, 240, 0.2)',
+            'rgba(81, 218, 181, 0.2)',
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -238,23 +298,38 @@ export class StafftrainpersonPage implements OnInit {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 159, 64, 1)',
+            'rgba(180, 227, 46, 1)',
+            'rgba(88, 203, 240, 1)',
+            'rgba(81, 218, 181, 1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
-        plugins: {
-          labels: {
-            render: 'value',
-          }
-        },
         legend: {
           position: 'bottom',
           display: true,
           labels: {
           }
-        }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)',
+            }
+          }],
+          yAxes: [{
+            // scaleLabel: {
+            //   display: true,
+            //   labelString: 'หน่วยงาน (สำนัก/สถาบัน)'
+            // }
+          }],
+        },
       }
     });
   }

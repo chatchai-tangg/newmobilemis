@@ -27,10 +27,10 @@ export class AddStaffscholarPage implements OnInit {
     // console.log(this.id);
     // get item details using id
     this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreqscholar/' + this.id).subscribe(result => {
-      console.log(result);
+      // console.log(result);
       // this.dData = result;
       this.modelng = result.StaffReqscholar;
-      console.log(this.modelng);
+      // console.log(this.modelng);
     });
   }
 
@@ -40,8 +40,16 @@ export class AddStaffscholarPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Updatestfreqscholar';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
-      }
+        // console.log(res.status);
+        if (res.status == 'ok') {
+          this.router.navigate(['/menu/staffscholar']);
+        }
+        return res;
+      },
+        err => {
+          return err;
+
+        }
       );
   }
 

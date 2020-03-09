@@ -29,6 +29,15 @@ const routes: Routes = [
       { path: 'stafftrainperson', loadChildren: './pages/stafftrainperson/stafftrainperson.module#StafftrainpersonPageModule' },
       { path: 'staff-reqposition', loadChildren: './pages/staff-reqposition/staff-reqposition.module#StaffReqpositionPageModule' },
 
+      { path: 'get-staffreq', loadChildren: './pages/get-staffreq/get-staffreq.module#GetStaffreqPageModule' },
+      { path: 'get-stafftrain', loadChildren: './pages/get-stafftrain/get-stafftrain.module#GetStafftrainPageModule' },
+      { path: 'get-std', loadChildren: './pages/get-std/get-std.module#GetStdPageModule' },
+      { path: 'get-staffdistfac', loadChildren: './pages/get-staffdistfac/get-staffdistfac.module#GetStaffdistfacPageModule' },
+      { path: 'get-staffscholar', loadChildren: './pages/get-staffscholar/get-staffscholar.module#GetStaffscholarPageModule' },
+      { path: 'get-stddistfac', loadChildren: './pages/get-stddistfac/get-stddistfac.module#GetStddistfacPageModule' },
+      { path: 'get-stdend', loadChildren: './pages/get-stdend/get-stdend.module#GetStdendPageModule' },
+      { path: 'get-stdgradeless', loadChildren: './pages/get-stdgradeless/get-stdgradeless.module#GetStdgradelessPageModule' },
+
     ]
   }
 ];

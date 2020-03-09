@@ -34,8 +34,8 @@ export class AddStdPage implements OnInit {
       this.dData = result;
       this.modelng = result.Student;
       console.log(this.modelng);
-  });
-  
+    });
+
   }
 
   test() {
@@ -44,8 +44,16 @@ export class AddStdPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Student/Update';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
-      }
+        // console.log(res.status);
+        if (res.status == 'ok') {
+          this.router.navigate(['/menu/student']);
+        }
+        return res;
+      },
+        err => {
+          return err;
+
+        }
       );
   }
 

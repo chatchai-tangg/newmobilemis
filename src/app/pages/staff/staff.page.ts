@@ -21,8 +21,6 @@ export class StaffPage implements OnInit {
 
   constructor(public http: HttpClient) { }
 
-
-
   get_data() {
     this.http.get('https://app.rmutp.ac.th/testapibi/charts/empall')
       .subscribe((res: any) => {
@@ -40,6 +38,10 @@ export class StaffPage implements OnInit {
   ionViewDidEnter() {
     console.log("ionViewDidEnter");
     this.get_data();
+  }
+
+  ionViewDidLeave() {
+    console.log('exit2');
   }
 
   barChartMethod() {

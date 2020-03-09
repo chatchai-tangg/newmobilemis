@@ -1,26 +1,26 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-button slot="start" color="Dark-tint">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/get-std"></ion-back-button>
     </ion-button>
     <ion-title>แก้ไขข้อมูล</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <!-- <p>{{ modelng | json }}</p> -->
-  <div *ngIf="modelng">   
+  <div *ngIf="modelng">
     <ion-item>
       <ion-label position="floating">ปีการศึกษา :</ion-label>
       <ion-input [(ngModel)]="modelng.acadyear" placeholder="Enter Type" type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">จำนวน :</ion-label>
+      <ion-label position="floating">จำนวน : (คน)</ion-label>
       <ion-input [(ngModel)]="modelng.total" placeholder="Enter Count" type="number"></ion-input>
     </ion-item>
   </div>
 
   <ion-button (click)="test()" color="success" shape="block" expand="block" style="margin-top: 30px;">
     Update
-  </ion-button> 
+  </ion-button>
 
 </ion-content>

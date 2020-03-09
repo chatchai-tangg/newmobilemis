@@ -171,6 +171,18 @@ export class StudentdistfacPage implements OnInit {
     this.get_stddistdept09();
   }
 
+  ionViewDidEnter() {
+    this.get_stddistdept01();
+    this.get_stddistdept02();
+    this.get_stddistdept03();
+    this.get_stddistdept04();
+    this.get_stddistdept05();
+    this.get_stddistdept06();
+    this.get_stddistdept07();
+    this.get_stddistdept08();
+    this.get_stddistdept09();
+  }
+
   chartstddistdept01() {
     var ctx = (<any>document.getElementById('chartstddistdept01')).getContext('2d');
     this.chartstd = new Chart(ctx, {
@@ -181,23 +193,39 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะครุศาสตร์อุตสาหกรรม",
           data: this.countdept01,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(230, 0, 202, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(230, 0, 202, 1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
           yAxes: [{
             ticks: {
-                // max: 5,
-                min: 500,
-                stepSize: 100
+              // max: 5,
+              // min: 500,
+              stepSize: 150
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
             }
-        }]},
+          }],
+        },
+
         legend: {
           position: 'bottom',
           display: true,
@@ -221,18 +249,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะเทคโนโลยีคหกรรมศาสตร์",
           data: this.countdept02,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 97, 237, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(255, 97, 237,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 50
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -257,18 +304,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะเทคโนโลยีสื่อสารมวลชน",
           data: this.countdept03,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(153, 153, 153, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(153, 153, 153,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 50
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -293,18 +359,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะบริหารธุรกิจ",
           data: this.countdept04,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(0, 209, 255, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(0, 209, 255,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 100
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -329,18 +414,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะวิทยาศาสตร์และเทคโนโลยี",
           data: this.countdept05,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 255, 48, 0.5)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(153, 153, 153, 1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 50
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -365,18 +469,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะวิศวกรรมศาสตร์",
           data: this.countdept06,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(168, 2, 45, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(168, 2, 45,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 150
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -401,18 +524,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะศิลปศาสตร์",
           data: this.countdept07,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 247, 176, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(153, 153, 153,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 50
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -437,18 +579,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะอุตสาหกรรมสิ่งทอและออกแบบแฟชั่น",
           data: this.countdept08,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(0, 50, 156, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(0, 50, 156,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 50
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
@@ -473,18 +634,37 @@ export class StudentdistfacPage implements OnInit {
           label: "คณะสถาปัตยกรรมศาสตร์และการออกแบบ",
           data: this.countdept09,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(102, 39, 3, 0.3)',
           ],
           borderColor: [
-            'rgba(255,99,132,1)',
+            'rgba(102, 39, 3,1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          xAxes: [
-          ]
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 10
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
         },
         legend: {
           position: 'bottom',

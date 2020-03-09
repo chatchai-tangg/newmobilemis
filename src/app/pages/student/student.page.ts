@@ -51,6 +51,10 @@ export class StudentPage implements OnInit {
     this.get_stdyears();
   }
 
+  ionViewDidEnter() {
+    this.get_stdyears();
+  }
+
   testt() {
     var canvas: any = document.getElementById("barstdyear");
     var ctx = canvas.getContext("2d");
@@ -83,20 +87,24 @@ export class StudentPage implements OnInit {
       options: {
         scales: {
           xAxes: [{
-            // barThickness: 10,
-            // maxBarThickness: 10,
-            // minBarLength: 2,
             gridLines: {
               offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
             }
           }],
           yAxes: [{
             ticks: {
-              // max: 5,
-              // min: 500,
               stepSize: 500,
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
             }
-          }]
+          }],
         },
         legend: {
           position: "bottom",

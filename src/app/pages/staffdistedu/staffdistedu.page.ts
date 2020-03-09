@@ -42,6 +42,10 @@ export class StaffdisteduPage implements OnInit {
     this.get_classifiededu();
   }
 
+  ionViewDidEnter() {
+    this.get_classifiededu();
+  }
+
   Chartdistedu() {
     var ctxdistedu = (<any>document.getElementById('Chartdistedu')).getContext('2d');
     this.chart = new Chart(ctxdistedu, {
@@ -59,10 +63,11 @@ export class StaffdisteduPage implements OnInit {
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
             'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(181, 85, 243, 0.2)',
+            'rgba(58, 176, 248, 0.2)',
+            'rgba(248, 84, 58, 0.2)',
+            'rgba(228, 240, 76, 0.2)',
+            'rgba(81, 218, 181, 0.2)'
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -71,10 +76,11 @@ export class StaffdisteduPage implements OnInit {
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(181, 85, 243, 1)',
+            'rgba(58, 176, 248, 1)',
+            'rgba(248, 84, 58, 1)',
+            'rgba(228, 240, 76, 1)',
+            'rgba(81, 218, 181, 1)'
           ],
           data: this.degree,
           borderWidth: 1
@@ -86,7 +92,8 @@ export class StaffdisteduPage implements OnInit {
           display: true,
           labels: {
             padding: 15,
-            boxWidth: 20
+            // boxWidth: 20,
+            usePointStyle: true,
           },
         },
       }

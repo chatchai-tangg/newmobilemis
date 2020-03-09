@@ -34,13 +34,17 @@ export class Stdgradeless2Page implements OnInit {
       .subscribe((res: any) => {
         this.list = res.Table;
         this.total = res.map(res => res.total);
-        this.amcdyear = res.map(res => res.admitacadyear);        
+        this.amcdyear = res.map(res => res.admitacadyear);
         this.chartstdgrade();
 
       });
   }
 
   ngOnInit() {
+    this.get_stdgradeless2();
+  }
+
+  ionViewDidEnter() {
     this.get_stdgradeless2();
   }
 
@@ -73,8 +77,28 @@ export class Stdgradeless2Page implements OnInit {
         }]
       },
       options: {
-        plugins: {
-
+        scales: {
+          xAxes: [{
+            gridLines: {
+              offsetGridLines: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'จำนวน (คน)'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              // max: 5,
+              // min: 500,
+              stepSize: 10
+            },
+            // display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'ปีการศึกษา'
+            }
+          }],
         },
         legend: {
           position: 'bottom',
