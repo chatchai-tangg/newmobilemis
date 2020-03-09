@@ -35,7 +35,7 @@ export class GetStafftrainPage implements OnInit {
         this.stfdivition = this.stfdivition.concat(this.stffac);
         this.stfdivition = this.stfdivition.concat(this.stfinst);
         this.stfdivition = this.stfdivition.concat(this.stfcenter);
-        console.log(this.stfdivition);
+        // console.log(this.stfdivition);
       });
 
 

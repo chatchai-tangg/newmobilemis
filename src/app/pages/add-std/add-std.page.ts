@@ -27,13 +27,13 @@ export class AddStdPage implements OnInit {
 
     this.id = this.activatedRoute.snapshot.params["ID"];
     // this.modelng.ID = id;
-    console.log(this.id);
+    // console.log(this.id);
     // get item details using id
     this.http.get<any>('https://app.rmutp.ac.th/testapibi/Student/Showstd/' + this.id).subscribe(result => {
-      console.log(result);
+      // console.log(result);
       this.dData = result;
       this.modelng = result.Student;
-      console.log(this.modelng);
+      // console.log(this.modelng);
     });
 
   }
@@ -48,7 +48,7 @@ export class AddStdPage implements OnInit {
         if (res.status == 'ok') {
           this.router.navigate(['/menu/student']);
         }
-        return res;
+        
       },
         err => {
           return err;

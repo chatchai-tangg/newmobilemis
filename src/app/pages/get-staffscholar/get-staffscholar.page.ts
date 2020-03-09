@@ -23,7 +23,7 @@ export class GetStaffscholarPage implements OnInit {
     http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/Empscholar').subscribe(result => {
       this.DataArr = result;
       // console.log(JSON.stringify(this.DataArr));
-      console.log(this.DataArr);
+      // console.log(this.DataArr);
     });
   }
 

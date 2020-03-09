@@ -52,7 +52,7 @@ export class GetStddistfacPage implements OnInit {
         this.dept01 = this.dept01.concat(this.dept08);
         this.dept01 = this.dept01.concat(this.dept09);
         
-        console.log(this.dept01);
+        // console.log(this.dept01);
       });
 
    }

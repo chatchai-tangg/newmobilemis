@@ -46,13 +46,13 @@ export class StaffReqpositionPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    console.log("test1");
+    // console.log("test1");
     this.get_reqposition();
   }
 
-  ionViewDidLeave() {
-    console.log('exit');
-  }
+  // ionViewDidLeave() {
+  //   console.log('exit');
+  // }
 
 
 
@@ -116,11 +116,13 @@ export class StaffReqpositionPage implements OnInit {
   }
 
   doRefresh(event) {
-    console.log('Begin async operation');
+    // console.log('Begin async operation');
+    
     setTimeout(() => {
-      console.log('Async operation has ended');
+      // console.log('Async operation has ended');
+      this.get_reqposition();
       event.target.complete();
-    }, 2000);
+    }, 1000);
   }
 
 }

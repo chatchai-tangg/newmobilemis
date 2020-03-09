@@ -25,7 +25,7 @@ export class GetStdPage implements OnInit {
     .subscribe((result: any) => {
       this.DataArr = result
       
-      console.log(this.DataArr);
+      // console.log(this.DataArr);
     });
   }
 

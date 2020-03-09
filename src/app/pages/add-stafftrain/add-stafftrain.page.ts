@@ -29,10 +29,10 @@ export class AddStafftrainPage implements OnInit {
     // console.log(this.id);
     // get item details using id
     this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstftrain/' + this.id).subscribe(result => {
-      console.log(result);
+      // console.log(result);
       // this.dData = result;
       this.modelng = result.StaffReqscholar;
-      console.log(this.modelng);
+      // console.log(this.modelng);
     });
   }
 
@@ -46,7 +46,7 @@ export class AddStafftrainPage implements OnInit {
         if (res.status == 'ok') {
           this.router.navigate(['/menu/stafftrainperson']);
         }
-        return res;
+        
       },
         err => {
           return err;

@@ -41,7 +41,7 @@ export class Stdgradeless2Page implements OnInit {
   }
 
   ngOnInit() {
-    this.get_stdgradeless2();
+    // this.get_stdgradeless2();
   }
 
   ionViewDidEnter() {
@@ -111,5 +111,14 @@ export class Stdgradeless2Page implements OnInit {
       }
     });
 
+  }
+
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_stdgradeless2();
+      event.target.complete();
+    }, 1000);
   }
 }

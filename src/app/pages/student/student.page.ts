@@ -48,7 +48,7 @@ export class StudentPage implements OnInit {
   }
 
   ngOnInit() {
-    this.get_stdyears();
+    // this.get_stdyears();
   }
 
   ionViewDidEnter() {
@@ -117,5 +117,14 @@ export class StudentPage implements OnInit {
       }
     });
 
+  }
+
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_stdyears();
+      event.target.complete();
+    }, 1000);
   }
 }

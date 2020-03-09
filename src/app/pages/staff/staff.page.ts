@@ -36,13 +36,13 @@ export class StaffPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    console.log("ionViewDidEnter");
+    // console.log("ionViewDidEnter");
     this.get_data();
   }
 
-  ionViewDidLeave() {
-    console.log('exit2');
-  }
+  // ionViewDidLeave() {
+  //   console.log('exit2');
+  // }
 
   barChartMethod() {
     var ctx = (<any>document.getElementById('canvas-chart')).getContext('2d');
@@ -103,11 +103,12 @@ export class StaffPage implements OnInit {
   }
 
   doRefresh(event) {
-    console.log('Begin async operation');
+    // console.log('Begin async operation');    
     setTimeout(() => {
-      console.log('Async operation has ended');
+      // console.log('Async operation has ended');
+      this.get_data();
       event.target.complete();
-    }, 2000);
+    }, 1000);
   }
 }
 

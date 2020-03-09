@@ -39,7 +39,7 @@ export class StaffdisteduPage implements OnInit {
   }
 
   ngOnInit() {
-    this.get_classifiededu();
+    // this.get_classifiededu();
   }
 
   ionViewDidEnter() {
@@ -87,6 +87,7 @@ export class StaffdisteduPage implements OnInit {
         }]
       },
       options: {
+        responsive: true,
         legend: {
           position: "bottom",
           display: true,
@@ -98,6 +99,15 @@ export class StaffdisteduPage implements OnInit {
         },
       }
     });
+  }
+
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_classifiededu();
+      event.target.complete();
+    }, 1000);
   }
 
 }

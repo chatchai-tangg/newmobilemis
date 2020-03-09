@@ -30,10 +30,10 @@ export class AddStaffreqPage implements OnInit {
     // console.log(this.id);
     // get item details using id
     this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreq/' + this.id).subscribe(result => {
-      console.log(result);
+      // console.log(result);
       // this.dData = result;
       this.modelng = result.StaffReq;
-      console.log(this.modelng);
+      // console.log(this.modelng);
     });
   }
 
@@ -43,7 +43,7 @@ export class AddStaffreqPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Updatestfreq';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
+        // console.log(res);
         if (res.status == 'ok') {
           // this.router.navigate(['/menu/staff-reqposition']);
           this.navController.navigateBack(['/menu/staff-reqposition']);

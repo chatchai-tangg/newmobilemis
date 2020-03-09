@@ -30,7 +30,7 @@ export class AddstdgradelessPage implements OnInit {
     // console.log(this.id);
     // get item details using id
     this.http.get<any>('https://app.rmutp.ac.th/testapibi/Student/Showstdgradeless/' + this.id).subscribe(result => {
-      console.log(result);
+      // console.log(result);
       this.dData = result;
       this.modelng = result.Student;
       // console.log(this.modelng);
@@ -42,10 +42,17 @@ export class AddstdgradelessPage implements OnInit {
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Student/UpdateStdGradeless';
     return this.http.post<any>(authUrl, data, config)
-      .subscribe(res => {
-        console.log(res);
+    .subscribe(res => {
+      // console.log(res);
+      if (res.status == 'ok') {
+        this.router.navigate(['/menu/stdgradeless2']);
+      }      
+    },
+      err => {
+        return err;
+
       }
-      );
+    );
   }
 
 }

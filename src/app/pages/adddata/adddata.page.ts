@@ -31,13 +31,13 @@ export class AdddataPage implements OnInit {
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params["ID"];
     // this.modelng.ID = id;
-    console.log(this.id);
+    // console.log(this.id);
     // get item details using id
     this.http.get<any>('http://203.158.144.140/APIchart/dataupdate/show/' + this.id).subscribe(result => {
-      console.log(result);
+      // console.log(result);
       this.dData = result;
       this.modelng = result.staffall;
-      console.log(this.modelng);
+      // console.log(this.modelng);
       // console.log(JSON.stringify(this.dData));
     });
     // this.test();
@@ -49,11 +49,11 @@ export class AdddataPage implements OnInit {
     const authUrl = 'https://app.rmutp.ac.th/testapibi/Staff_all/Update';
     return this.http.post<any>(authUrl, data, config)
       .subscribe(res => {
-        console.log(res);
+        // console.log(res);
         if (res.status == 'ok') {
           // this.router.navigate(['/menu/staff']);
         }
-        return res;
+        // return res;
       },
         err => {
           return err;

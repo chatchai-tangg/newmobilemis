@@ -41,7 +41,7 @@ export class StdenddistfacPage implements OnInit {
   }
 
   ngOnInit() {
-    this.get_stdfiedfac();
+    // this.get_stdfiedfac();
   }
 
   ionViewDidEnter() {
@@ -113,7 +113,14 @@ export class StdenddistfacPage implements OnInit {
 
   }
 
-
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_stdfiedfac();
+      event.target.complete();
+    }, 1000);
+  }
 
 
 }

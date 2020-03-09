@@ -160,15 +160,15 @@ export class StudentdistfacPage implements OnInit {
   }
 
   ngOnInit() {
-    this.get_stddistdept01();
-    this.get_stddistdept02();
-    this.get_stddistdept03();
-    this.get_stddistdept04();
-    this.get_stddistdept05();
-    this.get_stddistdept06();
-    this.get_stddistdept07();
-    this.get_stddistdept08();
-    this.get_stddistdept09();
+    // this.get_stddistdept01();
+    // this.get_stddistdept02();
+    // this.get_stddistdept03();
+    // this.get_stddistdept04();
+    // this.get_stddistdept05();
+    // this.get_stddistdept06();
+    // this.get_stddistdept07();
+    // this.get_stddistdept08();
+    // this.get_stddistdept09();
   }
 
   ionViewDidEnter() {
@@ -677,6 +677,23 @@ export class StudentdistfacPage implements OnInit {
       }
     });
 
+  }
+
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_stddistdept01();
+    this.get_stddistdept02();
+    this.get_stddistdept03();
+    this.get_stddistdept04();
+    this.get_stddistdept05();
+    this.get_stddistdept06();
+    this.get_stddistdept07();
+    this.get_stddistdept08();
+    this.get_stddistdept09();
+      event.target.complete();
+    }, 1000);
   }
 
 

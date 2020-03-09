@@ -45,14 +45,13 @@ export class StaffscholarPage implements OnInit {
         this.list = res;
         this.dataposition = res.map(res => res.scholartype);
         this.datanameposition = res.map(res => res.total);
-        console.log(this.dataposition);
-        console.log(this.datanameposition);
+     
         this.Chartscholar();
       });
   }
 
   ngOnInit() {
-    this.get_reqscholar();
+    // this.get_reqscholar();
   }
 
   ionViewDidEnter() {
@@ -98,5 +97,14 @@ export class StaffscholarPage implements OnInit {
         },
       }
     });
+  }
+
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_reqscholar();
+      event.target.complete();
+    }, 1000);
   }
 }

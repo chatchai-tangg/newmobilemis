@@ -33,7 +33,7 @@ export class MainPage implements OnInit {
 
     this.id = this.activatedRoute.snapshot.params["ID"];
     
-    console.log(this.id);
+    // console.log(this.id);
 
   }
 

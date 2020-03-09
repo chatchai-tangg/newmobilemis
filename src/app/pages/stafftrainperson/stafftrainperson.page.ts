@@ -74,10 +74,10 @@ export class StafftrainpersonPage implements OnInit {
 
 
   ngOnInit() {
-    this.get_stafftrainbydivi();
-    this.get_stafftrainbyfac();
-    this.get_stafftrainbycenter();
-    this.get_stafftrainbyinst();
+    // this.get_stafftrainbydivi();
+    // this.get_stafftrainbyfac();
+    // this.get_stafftrainbycenter();
+    // this.get_stafftrainbyinst();
   }
 
   ionViewDidEnter() {
@@ -332,6 +332,18 @@ export class StafftrainpersonPage implements OnInit {
         },
       }
     });
+  }
+
+  doRefresh(event) {
+    // console.log('Begin async operation');    
+    setTimeout(() => {
+      // console.log('Async operation has ended');
+      this.get_stafftrainbydivi();
+      this.get_stafftrainbyfac();
+      this.get_stafftrainbycenter();
+      this.get_stafftrainbyinst();
+      event.target.complete();
+    }, 1000);
   }
 
 }

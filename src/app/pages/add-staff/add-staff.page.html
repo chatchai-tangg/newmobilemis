@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-button slot="start" color="Dark-tint">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/menu/main"></ion-back-button>
     </ion-button>
     <ion-title>แก้ไขข้อมูล</ion-title>
   </ion-toolbar>
@@ -14,7 +14,7 @@
       <ion-input [(ngModel)]="modelng.stafftype" placeholder="Enter Type" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>จำนวน :</ion-label>
+      <ion-label position="floating">จำนวน : (คน)</ion-label>
       <ion-input [(ngModel)]="modelng.total" placeholder="Enter Count"></ion-input>
     </ion-item>
   </div>
