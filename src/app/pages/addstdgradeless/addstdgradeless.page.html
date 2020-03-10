@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
   <!-- <p>{{ modelng | json }}</p> -->
-  <div *ngIf="modelng">   
+  <div *ngIf="modelng; else skeleton">
     <ion-item>
       <ion-label position="floating">ปีการศึกษา :</ion-label>
       <ion-input [(ngModel)]="modelng.admitacadyear" placeholder="Enter Type" type="number"></ion-input>
@@ -21,6 +21,17 @@
 
   <ion-button (click)="test()" color="success" shape="block" expand="block" style="margin-top: 30px;">
     Update
-  </ion-button> 
+  </ion-button>
+
+  <ng-template #skeleton>
+    <ion-list>
+      <!-- <ion-item *ngFor="let item of [50, 20, 70, 80, 50]"> -->
+      <ion-item *ngFor="let item of [50, 50]">
+        <p [ngStyle]=" { width: item + '%' }">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </p>
+      </ion-item>
+    </ion-list>
+  </ng-template>
 
 </ion-content>

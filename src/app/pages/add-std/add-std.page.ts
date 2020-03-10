@@ -14,6 +14,7 @@ export class AddStdPage implements OnInit {
   dData: any[] = [];
   id: any;
   modelng: StaffAll;
+  items: any;
 
 
   constructor(
@@ -26,16 +27,18 @@ export class AddStdPage implements OnInit {
   ngOnInit() {
 
     this.id = this.activatedRoute.snapshot.params["ID"];
-    // this.modelng.ID = id;
-    // console.log(this.id);
-    // get item details using id
-    this.http.get<any>('https://app.rmutp.ac.th/testapibi/Student/Showstd/' + this.id).subscribe(result => {
-      // console.log(result);
-      this.dData = result;
-      this.modelng = result.Student;
-      // console.log(this.modelng);
-    });
+    this.loadData();
+  }
 
+  async loadData(): Promise<void> {
+    setTimeout(() => {
+      this.items = this.http.get<any>('https://app.rmutp.ac.th/testapibi/Student/Showstd/' + this.id).subscribe(result => {
+        // console.log(result);
+        this.dData = result;
+        this.modelng = result.Student;
+        // console.log(this.modelng);
+      });
+    }, 2000);
   }
 
   test() {
@@ -48,7 +51,7 @@ export class AddStdPage implements OnInit {
         if (res.status == 'ok') {
           this.router.navigate(['/menu/student']);
         }
-        
+
       },
         err => {
           return err;

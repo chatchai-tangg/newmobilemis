@@ -14,6 +14,7 @@ export class AddStaffreqPage implements OnInit {
   dData: any[] = [];
   id: any;
   modelng: StaffAll;
+  items: any;
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -26,15 +27,19 @@ export class AddStaffreqPage implements OnInit {
   ngOnInit() {
 
     this.id = this.activatedRoute.snapshot.params["ID"];
-    // this.modelng.ID = id;
-    // console.log(this.id);
-    // get item details using id
-    this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreq/' + this.id).subscribe(result => {
-      // console.log(result);
-      // this.dData = result;
-      this.modelng = result.StaffReq;
-      // console.log(this.modelng);
-    });
+    // this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreq/' + this.id).subscribe(result => {     
+    //   this.modelng = result.StaffReq;   
+    // });
+
+    this.loadData();
+  }
+
+  async loadData(): Promise<void> {
+    setTimeout(() => {
+      this.items = this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreq/' + this.id).subscribe(result => {
+        this.modelng = result.StaffReq;
+      });
+    }, 2000);
   }
 
   update() {

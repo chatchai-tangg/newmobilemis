@@ -13,6 +13,7 @@ export class AddStaffscholarPage implements OnInit {
   dData: any[] = [];
   id: any;
   modelng: StaffAll;
+  items: any;
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -26,12 +27,19 @@ export class AddStaffscholarPage implements OnInit {
     // this.modelng.ID = id;
     // console.log(this.id);
     // get item details using id
-    this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreqscholar/' + this.id).subscribe(result => {
-      // console.log(result);
-      // this.dData = result;
-      this.modelng = result.StaffReqscholar;
-      // console.log(this.modelng);
-    });
+    // this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreqscholar/' + this.id).subscribe(result => {      
+    //   this.modelng = result.StaffReqscholar;     
+    // });
+    this.loadData();
+  }
+
+  async loadData(): Promise<void> {
+    setTimeout(() => {
+      this.items = this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfreqscholar/' + this.id).subscribe(result => {
+        this.modelng = result.StaffReqscholar;
+
+      });
+    }, 2000);
   }
 
   update() {

@@ -68,6 +68,7 @@ export class StudentdistfacPage implements OnInit {
         this.countdept01 = res.dept01.map(res => res.total);
         this.yeardept01 = res.dept01.map(res => res.admitacadyear);
         this.chartstddistdept01();
+        console.log(this.yeardept01);
       });
   }
 
@@ -684,14 +685,14 @@ export class StudentdistfacPage implements OnInit {
     setTimeout(() => {
       // console.log('Async operation has ended');
       this.get_stddistdept01();
-    this.get_stddistdept02();
-    this.get_stddistdept03();
-    this.get_stddistdept04();
-    this.get_stddistdept05();
-    this.get_stddistdept06();
-    this.get_stddistdept07();
-    this.get_stddistdept08();
-    this.get_stddistdept09();
+      this.get_stddistdept02();
+      this.get_stddistdept03();
+      this.get_stddistdept04();
+      this.get_stddistdept05();
+      this.get_stddistdept06();
+      this.get_stddistdept07();
+      this.get_stddistdept08();
+      this.get_stddistdept09();
       event.target.complete();
     }, 1000);
   }
