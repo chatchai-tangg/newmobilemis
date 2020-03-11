@@ -40,10 +40,6 @@ export class StaffPage implements OnInit {
     this.get_data();
   }
 
-  // ionViewDidLeave() {
-  //   console.log('exit2');
-  // }
-
   barChartMethod() {
     var ctx = (<any>document.getElementById('canvas-chart')).getContext('2d');
     this.chart = new Chart(ctx, {

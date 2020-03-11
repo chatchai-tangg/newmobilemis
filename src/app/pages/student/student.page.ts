@@ -35,6 +35,7 @@ export class StudentPage implements OnInit {
   //     });
   // }
 
+
   get_stdyears() {
     let labels: any = [];
     let data: any;
@@ -56,6 +57,10 @@ export class StudentPage implements OnInit {
   }
 
   testt() {
+    function commaify(value) {
+      var result = ('' + value).replace(/^(-?\d+)(\d{3})/, '$1,$2');
+      return value == result ? result : commaify(result);
+    };
     var canvas: any = document.getElementById("barstdyear");
     var ctx = canvas.getContext("2d");
     var myNewChart = new Chart(ctx, {
@@ -113,7 +118,18 @@ export class StudentPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 

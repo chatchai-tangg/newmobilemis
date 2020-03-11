@@ -68,7 +68,6 @@ export class StudentdistfacPage implements OnInit {
         this.countdept01 = res.dept01.map(res => res.total);
         this.yeardept01 = res.dept01.map(res => res.admitacadyear);
         this.chartstddistdept01();
-        console.log(this.yeardept01);
       });
   }
 
@@ -234,7 +233,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -289,7 +299,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -344,7 +365,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -399,7 +431,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -454,7 +497,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -509,7 +563,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -564,7 +629,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -619,7 +695,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 
@@ -674,7 +761,18 @@ export class StudentdistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 

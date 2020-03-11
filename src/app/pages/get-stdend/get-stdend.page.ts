@@ -19,14 +19,14 @@ export class GetStdendPage implements OnInit {
     public activatedRoute: ActivatedRoute,
     public router: Router,
     public apiService: CrudapiService
-  ) { 
+  ) {
 
     http.get<any[]>('https://app.rmutp.ac.th/testapibi/charts/Std_enddistfac')
-    .subscribe((result: any) => {
-      this.DataArr = result
-      
-      console.log(this.DataArr);
-    });
+      .subscribe((result: any) => {
+        this.DataArr = result
+
+        // console.log(this.DataArr);
+      });
   }
 
   ngOnInit() {

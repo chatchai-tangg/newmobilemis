@@ -107,7 +107,18 @@ export class StdenddistfacPage implements OnInit {
             padding: 15,
             boxWidth: 20
           }
-        }
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data, ) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
 

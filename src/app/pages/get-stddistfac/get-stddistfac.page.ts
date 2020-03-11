@@ -41,7 +41,6 @@ export class GetStddistfacPage implements OnInit {
         this.dept07 = result.dept07.map(res => res);
         this.dept08 = result.dept08.map(res => res);
         this.dept09 = result.dept09.map(res => res);
-       
 
         this.dept01 = this.dept01.concat(this.dept02);
         this.dept01 = this.dept01.concat(this.dept03);
@@ -51,11 +50,11 @@ export class GetStddistfacPage implements OnInit {
         this.dept01 = this.dept01.concat(this.dept07);
         this.dept01 = this.dept01.concat(this.dept08);
         this.dept01 = this.dept01.concat(this.dept09);
-        
+
         // console.log(this.dept01);
       });
 
-   }
+  }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params["ID"];

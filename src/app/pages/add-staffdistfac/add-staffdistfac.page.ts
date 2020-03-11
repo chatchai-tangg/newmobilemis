@@ -25,10 +25,6 @@ export class AddStaffdistfacPage implements OnInit {
   ngOnInit() {
 
     this.id = this.activatedRoute.snapshot.params["ID"];
-    // this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfedu/' + this.id).subscribe(result => {     
-    //   this.modelng = result.StaffDis;      
-    // });
-
     this.loadData();
 
   }

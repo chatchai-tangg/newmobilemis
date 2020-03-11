@@ -1,6 +1,6 @@
 {
   "appId": "com.example.app",
-  "appName": "AppMobile",
+  "appName": "MobileApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www"

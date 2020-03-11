@@ -14,23 +14,20 @@
     <li *ngFor="let item of DataArr">{{item.stafftype}} : {{item.total}}</li>
   </ul> -->
 
-  <ion-row *ngFor="let item of DataArr" class="ion-padding">
-    <ion-col size="10">
-      <div class="ion-text-wrap">
-        {{item.stafftype}} : {{item.total}} คน
-      </div>
-    </ion-col>
-    <ion-col>
-      <ion-button color="warning" size="small" routerLink='/add-staff/{{item.ID}}'>
-        <ion-icon name="create"></ion-icon>
-      </ion-button>
-    </ion-col>
-  </ion-row>
   <!-- <ion-button color="danger" size="small" (click)="delete(item)">
             <ion-icon name="trash"></ion-icon>
           </ion-button> -->
-
-
-
+  <ion-list-header>
+    <h4> รายละเอียดข้อมูล </h4>
+  </ion-list-header>
+  <ion-list *ngFor="let item of DataArr">
+    <ion-item>
+      <ion-label class="ion-text-wrap"> {{item.stafftype}} <br> จำนวน {{item.total}} คน</ion-label><br>
+      <ion-button color="warning" size="small" routerLink='/add-staff/{{item.ID}}'>
+        <ion-label>แก้ไข </ion-label>
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

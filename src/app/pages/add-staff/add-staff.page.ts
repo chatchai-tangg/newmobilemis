@@ -34,9 +34,10 @@ export class AddStaffPage implements OnInit {
 
   async loadData(): Promise<void> {
     setTimeout(() => {
-      this.items = this.http.get<any>('http://203.158.144.140/APIchart/dataupdate/show/' + this.id).subscribe(result => {
+      this.items = this.http.get<any>('https://app.rmutp.ac.th/testapibi/Staff_all/Showstfall/' + this.id).subscribe(result => {
         this.dData = result;
-        this.modelng = result.staffall;
+        this.modelng = result.Staffall;
+        // console.log(this.modelng);
       });
     }, 2000);
   }
