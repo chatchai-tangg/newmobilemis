@@ -22,7 +22,7 @@
   </ion-list-header>
   <ion-list *ngFor="let item of DataArr">
     <ion-item>
-      <ion-label class="ion-text-wrap"> {{item.stafftype}} <br> จำนวน {{item.total}} คน</ion-label><br>
+      <ion-label class="ion-text-wrap"> {{item.stafftype}} <br> จำนวน <b>{{item.total}}</b>  คน</ion-label><br>
       <ion-button color="warning" size="small" routerLink='/add-staff/{{item.ID}}'>
         <ion-label>แก้ไข </ion-label>
         <ion-icon name="create"></ion-icon>
