@@ -94,7 +94,7 @@ export class StafftrainpersonPage implements OnInit {
       data: {
         labels: this.depth,
         datasets: [{
-          label: 'อบรม/ประชุม/สัมมนา',
+          label: 'เข้าร่วม',
           data: this.total,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -142,6 +142,17 @@ export class StafftrainpersonPage implements OnInit {
               labelString: 'หน่วยงาน (กอง)'
             }
           }],
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
         },
       }
     });
@@ -206,6 +217,17 @@ export class StafftrainpersonPage implements OnInit {
             // }
           }],
         },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
   }
@@ -268,6 +290,17 @@ export class StafftrainpersonPage implements OnInit {
             }
           }],
         },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
+        },
       }
     });
   }
@@ -329,6 +362,17 @@ export class StafftrainpersonPage implements OnInit {
             //   labelString: 'หน่วยงาน (สำนัก/สถาบัน)'
             // }
           }],
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label: function (tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label;
+              data.datasets[tooltipItem.datasetIndex].label;
+              return label + ' ' + tooltipItem.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " คน";
+            },
+          },
         },
       }
     });
